@@ -1,0 +1,65 @@
+<nav class="navbar navbar-light" style="background-color:whitesmoke">
+  <a class="navbar-brand" href="#" style="padding: 10px">
+    <img src="assets/cartlogo.png" width="35" height="35" alt="">
+  </a>
+
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Shopping Cart</a>
+    </div>
+
+  </div>
+  <div class='panel panel-primary'>
+  <div class='panel-heading' >
+    <h4>{{source | uppercase}}</h4>
+  </div>
+</div>
+
+<div class='panel-body'>
+  <div class='table-responsive'>
+    <table class='table'>
+      <thead>
+          <tr>
+            <th>
+            </th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>price </th>
+            <th>total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let item of cart.items'>
+            <td>
+              <input type="checkbox">
+            </td>
+            <td>
+              <a href="{{item.name}}" target="_blank">
+                            {{item.name}}
+                            </a>
+              <p>
+                {{item.description}}
+              </p>
+            </td>
+
+            <td>
+              {{ item.quantity}}
+            </td>
+            <td>
+              {{item.price}}
+            </td>
+            <td>
+              {{item.total}}
+            </td>
+          </tr>
+        </tbody>
+        <tr>
+          <td>
+            <button type="button" class="btn btn-primary">Checkout</button>
+          </td>
+        </tr>
+    </table>
+  </div>
+</div>
+</nav>
